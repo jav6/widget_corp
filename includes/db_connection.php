@@ -2,7 +2,7 @@
 // 1. Create a database connection
 define("DB_SERVER", "localhost");
 define("DB_USER", "root");
-define("DB_PASS", "");
+define("DB_PASS", "toor");
 define("DB_NAME", "widget_cms");
 $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 // Test if connection succeeded
