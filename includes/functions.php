@@ -11,6 +11,21 @@ function confirm_query($result_set){
 	}
  }
 
+ function form_errors($errors=array()){
+    $output = "";
+    if (!empty($errors)) {
+        $output .= "<div class=\"errors\">";
+        $output .= "Please fix the following errors:";
+        $output .= "<ul>";
+        foreach ($errors as $key => $errors) {
+            $output .= "<li>{$errors}</li>";
+        }
+        $output .= "</ul>";
+        $output .= "</div>";
+    }
+    return $output;
+}
+
 function find_all_subjects(){
  	global $connection;
 	$query = "SELECT * FROM subjects WHERE visible = 1 ORDER BY position ASC;";

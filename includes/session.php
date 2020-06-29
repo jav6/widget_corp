@@ -13,4 +13,15 @@ function message() {
         return $output;
     }
 }
+
+function errors() {
+	if (isset($_SESSION["errors"])) {
+        $errors = $_SESSION["errors"];
+
+        // clear message
+        $_SESSION["errors"] = null;
+
+        return $errors;
+    }
+}
 ?>
