@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
         $query .= "LIMIT 1";
         $result = mysqli_query($connection, $query);
 
-        if ($result && mysqli_affected_rows($connection)) {
+        if ($result && mysqli_affected_rows($connection) >= 0) {
             // Success
             $_SESSION["message"] = "Subject update.";
             redirect_to("manage_content.php");
