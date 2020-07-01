@@ -9,6 +9,14 @@ if (!$current_subject) {
 }
 
 $id = $current_subject["id"];
+
+$page_set = find_pages_for_subject($id);
+
+if (mysqli_num_rows($page_set) > 0) {
+	$_SESSION["message"] = "Can't delete subject with pages!";
+    redirect_to("manage_content.php?subject={$id}");
+}
+
 $query = "DELETE FROM subjects WHERE id = {$id} LIMIT 1;";
 
 $result = mysqli_query($connection, $query);
