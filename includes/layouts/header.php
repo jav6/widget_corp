@@ -1,3 +1,6 @@
+<?php 
+	if(!isset($layout_context)){$layout_context = "public";}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
