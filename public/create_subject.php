@@ -2,25 +2,27 @@
 <?php require_once("../includes/db_connection.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php confirm_logged_in(); ?>
 
 <?php
 if (isset($_POST['submit'])) {
-	// validations form fields
+	// Process the form
+	
+	$menu_name = mysql_prep($_POST["menu_name"]);
+	$position = (int) $_POST["position"];
+	$visible = (int) $_POST["visible"];
+	
+	// validations
 	$required_fields = array("menu_name", "position", "visible");
-	validation_presence($required_fields);
-
+	validate_presences($required_fields);
+	
 	$fields_with_max_lengths = array("menu_name" => 30);
 	validate_max_lengths($fields_with_max_lengths);
-
+	
 	if (!empty($errors)) {
 		$_SESSION["errors"] = $errors;
 		redirect_to("new_subject.php");
 	}
-
-	// Process the form
-	$menu_name = $_POST["menu_name"];
-	$position = (int) $_POST["position"];
-	$visible = (int) $_POST["visible"];
 	
 	$query  = "INSERT INTO subjects (";
 	$query .= "  menu_name, position, visible";
