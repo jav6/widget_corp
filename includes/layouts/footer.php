@@ -1,4 +1,4 @@
-<div id="footer">Widget Corp, Created: <?php echo date("Y");?> - &copy;<span title="Mohammad Javidi">M.J</span></div>
+<div id="footer">Widget Corp, Created: 2020 - &copy;<span title="Mohammad Javidi">M.J</span></div>
 </body>
 </html>
 <?php 
