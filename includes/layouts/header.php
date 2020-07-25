@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Widget Corp</title>
+	<title>Widget Corp <?php if ($layout_context == "admin") { echo "Admin"; } ?></title>
 	<link rel="stylesheet" href="stylesheets/public.css">
 </head>
 <body>
